@@ -1,0 +1,29 @@
+def main():
+    
+    coupon = float(input("Enter the coupon amount as a decimal (example, .10): "))
+    
+    
+    if coupon > 1 or coupon <= 0:
+        coupon = 0.10
+
+    weeks = []
+    for i in range(1, 5):
+        bill = float(input(f"Enter the grocery bill for week {i}: "))
+        weeks.append(bill)
+
+    monthly_total = sum(weeks)
+
+    weekly_average = monthly_total / 4
+
+    monthly_total_with_coupon = monthly_total * (1 - coupon)
+
+    weekly_average_with_coupon = monthly_total_with_coupon / 4
+
+    print(f"\nMonthly total without coupon: ${monthly_total:.2f}")
+    print(f"Weekly average without coupon: ${weekly_average:.2f}")
+
+3    print(f"\nMonthly total with coupon: ${monthly_total_with_coupon:.2f}")
+    print(f"Weekly average with coupon: ${weekly_average_with_coupon:.2f}")
+
+if __name__ == "__main__":
+    main()
